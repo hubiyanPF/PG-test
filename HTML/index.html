@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout Page</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <!-- Timer -->
+  <div class="d-flex time-chip-alt w-100 justify-content-center align-items-center">
+    <img class="timer-icon" src="images/schedule-icon.png" alt="">
+    <p class="time-text">
+      Session Expiry
+    </p>
+    <p class="time-text">
+      :
+    </p>
+    <div class="d-flex time-wrapper">
+      <p class="time-text">
+        13m
+      </p>
+      <p class="time-text">
+        12s
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- Wrapper Div -->
+  <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 ">
+
+    <!-- White Card -->
+    <div class="bg-card d-flex flex-column justify-content-center align-items-center">
+
+
+      <!-- Transaction summary - Blue Box -->
+      <div class="d-flex flex-column w-100 summary-box">
+        <div class="d-flex flex-column justify-content-between heading-wrapper">
+          <h1 class="transaction-head">Transaction Summary</h1>
+          <div class="d-flex chip-wrapper">
+            <div class="d-flex chip-summary">
+              <p class="chip-text chip-text-tag">Country</p>
+              <p class="chip-text">:</p>
+              <p class="chip-text">IN</p>
+            </div>
+            <div class="d-flex chip-summary">
+              <p class="chip-text chip-text-tag">Order ID</p>
+              <p class="chip-text">:</p>
+              <p class="chip-text">12345678</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column summary-details">
+          <div class="d-flex justify-content-between summary-row">
+            <h3 class="summary-info">Amount</h3>
+            <h3 class="summary-info">3245</h3>
+          </div>
+          <div class="d-flex justify-content-between summary-row">
+            <h3 class="summary-info">Currency</h3>
+            <h3 class="summary-info">INR</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-and-cancel d-flex flex-column w-100">
+
+        <!-- Payment Options -->
+        <div class="d-flex flex-column gap-16-wrapper">
+          <h1 class="payment-head">Payment Options</h1>
+          <div class="d-flex flex-column payment-box w-100">
+            <!-- tabs -->
+            <ul class="nav nav-pills nav-justified w-100" id="pills-tab" role="tablist">
+              <!-- UPI tab head -->
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                  type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                  <div class="d-flex align-items-center justify-content-center accordion-head-wrapper">
+                    <img class="p-method-icon" src="images/upi-icon.png" alt="">
+                    <p class="accordion-head">UPI</p>
+                  </div>
+                </button>
+              </li>
+              <!-- Netbanking tab head -->
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                  <div class="d-flex align-items-center justify-content-center accordion-head-wrapper">
+                    <img class="p-method-icon" src="images/net-banking-icon.png" alt="">
+                    <p class="accordion-head">Net Banking</p>
+                  </div>
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                tabindex="0">
+                <!-- Tab Contents - UPI -->
+                <div class="d-flex flex-column align-items-end form-wrapper gap-32-wrapper">
+                  <div class="d-flex flex-column upi-input-wrapper w-100">
+                    <div class="d-flex flex-column form-and-label-wrapper form-help-wrapper">
+                      <div class="label-and-stat d-flex w-100 justify-content-between align-items-center ">
+                        <label for="formGroupExampleInput" class="form-label">Enter your UPI ID</label>
+                        <div class="status-wrapper d-flex">
+                          <div class="valid-chip d-flex justify-content-center align-items-center">
+                            <img class="badge-ico" src="images/verified_user.png" alt="">
+                            <p class="valid-text">UPI ID Valid</p>
+                          </div>
+                          <div class="invalid-chip d-flex justify-content-center align-items-center">
+                            <img class="badge-ico" src="images/gpp_bad.png" alt="">
+                            <p class="valid-text">UPI ID Not Correct</p>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="johndoe@exmpl">
+                      <p class="help-text normal-help">Enter UPI ID in the correct format</p>
+                      <p class="help-text">Please re-enter a valid UPI ID to continue</p>
+                    </div>
+                  </div>
+                  <div class="button-wrapper">
+                    <button class="btn btn-primary checkout-button d-flex gap-3 align-items-center" type="button">
+                      <span class="spinner-border spinner-border-sm d-flex align-items-center justify-content-center"
+                        aria-hidden="true">
+                        <img class="custom-spinner" src="images/Ellipse-48.png" alt="">
+                      </span>
+                      Pay 3245 INR
+                    </button>
+                  </div>
+                  <hr class="hr"/>
+                  <div class="d-flex flex-column justify-content-center align-items-center logos-and-heading w-100">
+                    <h5>
+                      We support all UPI methods
+                    </h5>
+                    <img class="upi-methods-disabled" src="images/upi-methodsimage.png" alt="">
+
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                tabindex="0">
+                <!-- Tab Contents - Net Banking -->
+                <div class="d-flex flex-column netbanking-wrapper">
+                  <label class="form-label-as-heading">Popular Banks</label>
+                  <div class="d-flex flex-column gap-32-wrapper">
+                    <div class="relative-div">
+                      <div class="overlay-div"></div>
+                      <div class="netbanking-no-overflow">
+                        <div class="d-flex gap-2 ">
+
+
+                          <div class="form-check bank-check d-flex">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label d-flex flex-column w-100 h-100" for="flexRadioDefault2">
+                              <img class="banking-logo" src="images/sbi.png" alt="SBI bank logo">
+                              <div class="bank-label">State Bank Of India</div>
+                            </label>
+                          </div>
+
+                          <div class="form-check bank-check d-flex">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label d-flex flex-column w-100 h-100" for="flexRadioDefault1">
+                              <img class="banking-logo" src="images/kotak.png" alt="SBI bank logo">
+                              <div class="bank-label">Kotak Bank</div>
+                            </label>
+                          </div>
+
+                          <div class="form-check bank-check d-flex">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <label class="form-check-label d-flex flex-column w-100 h-100" for="flexRadioDefault3">
+                              <img class="banking-logo" src="images/icici.png" alt="SBI bank logo">
+                              <div class="bank-label">ICICI</div>
+                            </label>
+                          </div>
+
+                          <div class="form-check bank-check d-flex">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                            <label class="form-check-label d-flex flex-column w-100 h-100" for="flexRadioDefault4">
+                              <img class="banking-logo" src="images/axis.png" alt="SBI bank logo">
+                              <div class="bank-label">Axis Bank</div>
+                            </label>
+                          </div>
+
+                          <div class="form-check bank-check d-flex buttons-zero">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaultnone">
+                            <label class="form-check-label d-flex flex-column w-100 h-100" for="flexRadioDefaultnone">
+                              <img class="banking-logo" src="images/axis.png" alt="SBI bank logo">
+                              <div class="bank-label">Axis Bank</div>
+                            </label>
+                          </div>
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column pix-input-wrapper w-100">
+                      <div class="d-flex flex-column form-and-label-wrapper">
+                        <label for="formGroupExampleInput" class="form-label">OR Select Your Bank</label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="1">ICICI Bank</option>
+                          <option value="2">Kotak Bank</option>
+                          <option value="4">Federal Bank</option>
+                          <option value="5">HDFC Bank</option>
+                          <option value="6">State Bank of India</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-wrapper d-flex w-100 justify-content-end">
+                    <button class="btn btn-primary checkout-button d-flex gap-3 align-items-center" type="button">
+                      <span class="spinner-border spinner-border-sm d-flex align-items-center justify-content-center"
+                        aria-hidden="true">
+                        <img class="custom-spinner" src="images/Ellipse-48.png" alt="">
+                      </span>
+                      Pay 3245 INR
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- UPI Confirm transaction -->
+          <div class=" d-flex flex-column justify-content-center align-items-center gap-4">
+            <img class="upi-expiry" src="images/session_UPI_mainIcon.png" alt="">
+            <div class="d-flex flex-column justify-content-center align-items-center expiry-transaction-wrapper">
+              <h2 class="payment-head">Confirm Your Transaction</h2>
+              <p class="upi-expiry-tag">Go to your linked UPI app and confirm your transaction before session time runs
+                out</p>
+              <div class="d-flex align-items-center time-chip">
+                <img class="timer-icon" src="images/schedule-icon.png" alt="trtansaction timed out image">
+                <p class="time-text">
+                  Session Expiry
+                </p>
+                <p class="time-text">
+                  :
+                </p>
+                <div class="d-flex time-wrapper">
+                  <p class="time-text">
+                    13m
+                  </p>
+                  <p class="time-text">
+                    12s
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  TRansaction timed out state -->
+          <div class=" d-flex flex-column justify-content-center align-items-center gap-4">
+            <img class="upi-expiry" src="images/transaction-timed-out_mainIcon.png" alt="transaction timed out image">
+            <div class="d-flex flex-column justify-content-center align-items-center expiry-transaction-wrapper">
+              <h2 class="payment-head">Transaction timed out.</h2>
+              <p class="upi-expiry-tag">You have run out of time to complete this transaction. Please try again.</p>
+              <div class="button-wrapper">
+                <button type="button" class="btn btn-primary checkout-button">Try again</button>
+              </div>
+            </div>
+          </div>
+          <!-- cancel button -->
+          <div class="button-wrapper w-100 d-flex justify-content-center">
+            <button type="button" class="btn btn-primary checkout-button checkout-cancel">Cancel transaction</button>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
